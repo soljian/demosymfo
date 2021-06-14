@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  nginx:
+    volumes:
+      - ./public:/var/www/public/
+    ports:
+      - "80:80"
+
+  php:
+    volumes:
+      - ./:/var/www
+    build:
+      context: .
+      target: dev
+    environment: 
+      APP_ENV: dev
+      XDEBUG_MODE: coverage

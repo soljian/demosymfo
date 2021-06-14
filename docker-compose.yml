@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  php:
+    image: ${PROJECT_FULL_PATH:-symfony-demosymfo-dev/}php:latest
+    build:
+      context: .
+      target: prod
+    environment:
+      - TZ=${CUSTOM_TZ:-Europe/Paris}
+    networks:
+      - default
+    user: 1000:1000
+
+  nginx:
+    image: ${PROJECT_FULL_PATH:-symfony-demosymfo-dev/}nginx:latest
+    build:
+      context: .
+      target: nginx
+    environment: 
+      - TZ=${CUSTOM_TZ:-Europe/Paris}
+    depends_on:
+      - php
+    networks:
+      - default
