@@ -13,6 +13,11 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
+- stage: Test
+  jobs:
+    - job : TestJob1
+      steps:
+      - script: echo Bonjour on fait des tests !
 - stage: Build
   displayName: Build image
   jobs:
