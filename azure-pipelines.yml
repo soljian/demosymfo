@@ -2,6 +2,7 @@
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 pool: Default
+container: docker:dind
 
 trigger:
 - master
@@ -15,7 +16,6 @@ variables:
 stages:
 - stage: Build
   displayName: Build image
-  container: docker:dind
   jobs:
   - job: Build
     displayName: Build
