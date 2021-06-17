@@ -20,6 +20,7 @@ stages:
     displayName: Build
     steps:
     - bash: |
+        sudo apt update
         echo $USER
         whoami
         docker ps
