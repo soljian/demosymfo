@@ -15,6 +15,7 @@ variables:
 stages:
 - stage: Build
   displayName: Build image
+  container: docker:dind
   jobs:
   - job: Build
     displayName: Build
