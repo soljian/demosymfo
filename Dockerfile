@@ -1,5 +1,5 @@
 # PHP DEV
-FROM soljian/php:7.2-fpm-buster-hc-wfi as dev
+FROM soljian/php:7.2-gnlk as dev
 LABEL maintainer='maxime.verrier@sgs.com'
 
 WORKDIR /var/www
