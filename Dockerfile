@@ -13,6 +13,8 @@ USER appuser
 
 COPY --chown=1000:1000 . ./
 RUN mkdir /var/www/tests_logs || true
+RUN mkdir /var/www/var/log -p || true
+RUN mkdir /var/www/var/cache -p || true
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN composer global require "symfony/flex" --prefer-dist --no-progress --no-suggest --classmap-authoritative; \
